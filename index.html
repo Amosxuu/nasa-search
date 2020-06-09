@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="app">
+
+        <label for="search">搜尋你想要的</label>
+        <input type="search" id='search'
+        v-model="searchValue"
+        @keyup.enter="search"
+        >
+        <div class="container">
+            <div class="img-container" 
+            v-for="item in data"
+            >
+            <img :src="item.links[0].href" alt="">
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+<script src="app.js"></script>
+</html>
